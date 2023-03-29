@@ -12,15 +12,15 @@ let package = Package(
             targets: ["CDAPI"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+         .package(url: "https://github.com/Alamofire/Alamofire.git", from: "5.0.0"),
+         .package(url: "https://github.com/ReactiveX/RxSwift.git", from: "6.5.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "CDAPI",
-            dependencies: []),
+            dependencies: ["RxSwift", "Alamofire"]),
         .testTarget(
             name: "CDAPITests",
             dependencies: ["CDAPI"]),
